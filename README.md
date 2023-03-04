@@ -1,6 +1,8 @@
 # pygame-gol
 Conway's Game of Life in Python using pygame.
 
+NOTE: the implementation in `gol.py` is a really naive implementation which iterates through every square on the screen each generation. A more efficient implementation can be found in `gol_efficient.py`, which only checks the squares which are currently alive, and the set of neighbors of all those squares.
+
 # instructions
 
  - Modify constants (colors, window size, scale, speed, etc.) in `gol.py` as desired
