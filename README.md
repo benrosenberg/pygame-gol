@@ -8,6 +8,6 @@ NOTE: the implementation in `gol.py` is a really naive implementation which iter
  - Modify constants (colors, window size, scale, speed, etc.) in `gol.py` as desired
  - Run with `python gol.py`
  - Hit space to pause
-   + When paused, use the left mouse button to toggle squares
+   + When paused, use the left mouse button (or click and drag, in `gol_efficient.py`) to toggle squares
    + Hit space to unpause and see what happens!
  - Quit with 'q' or Escape
