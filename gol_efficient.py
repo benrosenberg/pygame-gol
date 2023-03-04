@@ -4,7 +4,7 @@ Ben Rosenberg 3.4.2023
 
 Instructions: 
  - Modify constants as desired
- - Run with `python gol.py`
+ - Run with `python gol_efficient.py`
  - Hit space to pause
    + When paused, draw on the screen to flip squares from alive to dead and vice versa.
    + Hit space to unpause and see what happens!
