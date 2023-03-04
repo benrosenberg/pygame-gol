@@ -1,12 +1,12 @@
 '''
 Conway's Game of Life simulation in pygame
-Ben Rosenberg 4.1.2022
+Ben Rosenberg 3.4.2023
 
 Instructions: 
  - Modify constants as desired
  - Run with `python gol.py`
  - Hit space to pause
-   + When paused, use the left mouse button to toggle squares
+   + When paused, draw on the screen to flip squares from alive to dead and vice versa.
    + Hit space to unpause and see what happens!
  - Quit with 'q' or Escape
 
@@ -35,7 +35,7 @@ alive_color = colors["hot pink"]
 
 # scale should be chosen to be a moderately sized number (10 <= scale <= 50)
 # so as to minimize performance hit (anything under 10 is pushing it)
-scale = 4
+scale = 10
 
 # how fast time moves when paused (so as to better detect input)
 fps = 1024
