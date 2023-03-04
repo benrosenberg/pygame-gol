@@ -27,7 +27,7 @@ colors = {
 }
 
 ### CONSTANTS -- modify these as you see fit
-size = width, height = 1366, 768
+size = width, height = 1920, 1080
 
 # colors taken from above dictionary
 dead_color = colors["black"]
