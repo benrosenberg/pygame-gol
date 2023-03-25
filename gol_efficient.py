@@ -47,7 +47,17 @@ glider = True
 
 ### END CONSTANTS
 
-import sys, pygame
+color_schemes = [
+    ('black', 'hot pink'),
+    ('blue', 'yellow'),
+    ('white', 'black'),
+    ('purple', 'cyan'),
+    ('yellow', 'hot pink'),
+    ('green', 'blue'),
+    ('red', 'green')
+]
+
+import sys, pygame, random
 pygame.init()
 
 screen = pygame.display.set_mode(size)
@@ -61,6 +71,26 @@ def render_squares(squares):
     except Exception as e:
         print('squares was ', squares)
         raise e
+
+pause_color = colors['white']
+pause_background_color = colors['black']
+
+def render_pause_icon():
+    # top right corner
+    pause_squares = set()
+    pause_background = set()
+    max_square_x = width//scale
+    for i in range(max_square_x - 5, max_square_x):
+        for j in range(5):
+            pause_background.add((i,j))
+            if 1 <= j <= 3 and (max_square_x - i) % 2 == 0:
+                pause_squares.add((i,j))
+    # render only when paused
+    if pause:
+        for i,j in pause_background:
+            screen.fill(pause_background_color, ((i*scale, j*scale), (scale, scale)))
+        for i,j in pause_squares:
+            screen.fill(pause_color, ((i*scale, j*scale), (scale, scale)))
 
 glider_pixels = {(0,1), (1, 2), (2, 0), (2, 1), (2, 2)} if glider else set()
 
@@ -115,6 +145,24 @@ while 1:
                     pause = False
                 else:
                     pause = True
+            if event.key == pygame.K_c:
+                squares = set()
+                screen.fill(dead_color)
+                pause = True
+            if event.key == pygame.K_LEFT:
+                if move_fps >= 6:
+                    move_fps /= 2
+            if event.key == pygame.K_RIGHT:
+                if move_fps <= 100:
+                    move_fps *= 2
+            if event.key == pygame.K_r:
+                dead_color, alive_color = random.choice(color_schemes)
+            if event.key == pygame.K_UP:
+                if scale < 45:
+                    scale += 5
+            if event.key == pygame.K_DOWN:
+                if scale > 10:
+                    scale -= 5
 
     if not pause:
         screen.fill(dead_color)
@@ -136,6 +184,8 @@ while 1:
             squares = flip_square(squares, pygame.mouse.get_pos())
             # update screen
             render_squares(squares)
+
+        render_pause_icon()
 
         clock.tick(fps)
 
