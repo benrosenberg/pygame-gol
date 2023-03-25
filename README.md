@@ -11,3 +11,6 @@ NOTE: the implementation in `gol.py` is a really naive implementation which iter
    + When paused, use the left mouse button (or click and drag, in `gol_efficient.py`) to toggle squares
    + Hit space to unpause and see what happens!
  - Quit with 'q' or Escape
+ - Clear (and pause) with 'c'
+ - Left/Right arrows increase/decrease framerate
+ - Up/Down arrows increase/decrease scaling
