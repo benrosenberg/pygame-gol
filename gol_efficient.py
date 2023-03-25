@@ -9,6 +9,9 @@ Instructions:
    + When paused, draw on the screen to flip squares from alive to dead and vice versa.
    + Hit space to unpause and see what happens!
  - Quit with 'q' or Escape
+ - Clear (and pause) with 'c'
+ - Left/Right arrows increase/decrease framerate
+ - Up/Down arrows increase/decrease scaling
 
 '''
 
